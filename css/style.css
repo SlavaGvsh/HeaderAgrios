@@ -235,12 +235,17 @@ body.checked {
 @media (max-width: 768px) {
   .dropdown__list {
     flex-direction: column;
+    position: static;
     left: 4rem;
-    transform: translateX(-100rem);
+    max-height: 0;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    padding: 0;
   }
   .dropdown__list.active {
-    transform: none;
+    max-height: 40rem;
+    overflow-y: scroll;
+    box-shadow: none;
   }
 }
 .dropdown__item {
@@ -296,10 +301,11 @@ body.checked {
   }
   .burger__menu.active::after {
     transform: rotate(45deg);
-    top: 0;
+    top: 0.9rem;
   }
   .burger__menu.active::before {
     transform: rotate(-45deg);
+    top: 0.9rem;
     bottom: 1rem;
   }
   .burger__menu.active span {

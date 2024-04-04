@@ -27,6 +27,7 @@
       &:hover .dropdown__list {
          display: flex;
       }
+      
       &-drop {
          position: relative;
       }
@@ -66,17 +67,26 @@
       top: 100%;
       left: 0;
       gap: 2rem;
+      // max-height: 0;
       box-shadow: $box-shadow;
       padding: 2rem;
       background: $color-white;
       @include respond(phone) {
          flex-direction: column;
+         position: static;
          left: 4rem;
-         transform: translateX(-100rem);
-         transition: all .3s ease-in-out;
+         max-height: 0;
+         // opacity: 0;
+         // transform: translateX(-100rem);
+         transition: all 0.3s ease-in-out;
+         overflow: hidden;
+         padding: 0;
 
          &.active {
-            transform: none;
+            max-height: 40rem;
+            overflow-y: scroll;
+            // opacity: 1;
+            box-shadow: none;
          }
       }
    }
@@ -133,10 +143,11 @@
       }
       &.active::after {
          transform: rotate(45deg);
-         top: 0;
+         top: 0.9rem;
       }
       &.active::before {
          transform: rotate(-45deg);
+         top: 0.9rem;
 
          bottom: 1rem;
          // transform: translate(-50% -50%);
