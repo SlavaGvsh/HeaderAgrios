@@ -218,17 +218,28 @@ body.checked {
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  left: 0;
   gap: 2rem;
   box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
   padding: 2rem;
   background: #fff;
+}
+@media (max-width: 768px) {
+  .dropdown__list {
+    flex-direction: column;
+    left: 4rem;
+  }
 }
 .dropdown__item {
   padding: 1.5rem;
 }
 .dropdown__item:not(:last-child) {
   border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .dropdown__item:not(:last-child) {
+    border-right: none;
+  }
 }
 .dropdown__title {
   color: #000;
@@ -241,6 +252,7 @@ body.checked {
   color: #777;
   padding: 1.5rem;
   display: block;
+  text-align: center;
 }
 .sub-dropdown__link:hover {
   opacity: 0.5;

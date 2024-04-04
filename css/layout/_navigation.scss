@@ -29,7 +29,6 @@
       }
       &-drop {
          position: relative;
-        
       }
    }
    &__link {
@@ -57,16 +56,23 @@
       display: none;
       position: absolute;
       top: 100%;
-      right: 0;
+      left: 0;
       gap: 2rem;
       box-shadow: $box-shadow;
       padding: 2rem;
       background: $color-white;
+      @include respond(phone) {
+         flex-direction: column;
+         left: 4rem;
+      }
    }
    &__item {
       padding: 1.5rem;
       &:not(:last-child) {
          border-right: 0.1rem solid rgb(0, 0, 0, 0.1);
+         @include respond(phone) {
+            border-right: none;
+         }
       }
    }
    &__title {
@@ -83,6 +89,7 @@
       color: $color-gray;
       padding: 1.5rem;
       display: block;
+      text-align: center;
       &:hover {
          opacity: 0.5;
       }
