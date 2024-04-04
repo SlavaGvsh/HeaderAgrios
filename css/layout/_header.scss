@@ -1,0 +1,19 @@
+.header {
+   // background: #ebe6e6;
+   box-shadow: $box-shadow;
+   padding: 2rem 1.5rem;
+
+   &__container {
+      @include display-flex;
+      gap: 5rem;
+      background: $color-white;
+   }
+   &__logo{
+      display: block;
+      transition: transform .3s;
+      &:hover{
+      transform: scale(1.2);
+
+      }
+   }
+}

@@ -1,0 +1,292 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #777;
+  font-size: 1.6rem;
+  padding: 0;
+  background: #fff;
+}
+
+[class*=__container] {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 0px 1.5rem;
+}
+
+body.checked {
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.mb-10 {
+  margin-bottom: 1rem;
+}
+
+.mb-30 {
+  margin-bottom: 3rem;
+}
+
+.mb-50 {
+  margin-bottom: 5rem;
+}
+
+.mb-80 {
+  margin-bottom: 8rem;
+}
+
+.header {
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  padding: 2rem 1.5rem;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  background: #fff;
+}
+.header__logo {
+  display: block;
+  transition: transform 0.3s;
+}
+.header__logo:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 30rem;
+    width: 80%;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+    transition: all 0.3s;
+    transform: translateX(-100rem);
+  }
+  .nav.active {
+    transform: none;
+  }
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+    padding-top: 5rem;
+  }
+}
+.nav__item:hover .dropdown__list {
+  display: flex;
+}
+.nav__item-drop {
+  position: relative;
+}
+.nav__link {
+  color: #777;
+  padding: 1rem 0.5rem;
+  display: block;
+}
+.nav__link-drop {
+  position: relative;
+}
+.nav__link-drop::after {
+  content: "";
+  background: url(../../img/error.svg) center/cover no-repeat;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+}
+.nav__link:hover {
+  opacity: 0.5;
+}
+
+.dropdown__list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  gap: 2rem;
+  box-shadow: 0rem 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  background: #fff;
+}
+.dropdown__item {
+  padding: 1.5rem;
+}
+.dropdown__item:not(:last-child) {
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+.dropdown__title {
+  color: #000;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.sub-dropdown__link {
+  color: #777;
+  padding: 1.5rem;
+  display: block;
+}
+.sub-dropdown__link:hover {
+  opacity: 0.5;
+}
+
+.burger__menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .burger__menu {
+    display: block;
+    width: 3rem;
+    height: 2rem;
+    position: relative;
+  }
+  .burger__menu::before, .burger__menu::after {
+    content: "";
+    width: 100%;
+    height: 0.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #000;
+  }
+  .burger__menu::after {
+    top: 100%;
+    bottom: 0;
+  }
+  .burger__menu.active::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  .burger__menu.active::before {
+    transform: rotate(-45deg);
+    bottom: 1rem;
+  }
+  .burger__menu.active span {
+    display: none;
+  }
+  .burger__menu span {
+    width: 100%;
+    height: 0.2rem;
+    display: inline-block;
+    position: absolute;
+    background: #000;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}/*# sourceMappingURL=style.css.map */
